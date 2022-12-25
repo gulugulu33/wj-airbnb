@@ -40,9 +40,9 @@ const HeaderRight = memo(() => {
               <div className="item login">登录</div>
             </div>
             <div className="bottom">
-              <div className="item">周恒🐏の 学妹</div>
-              <div className="item">🐏 の 抛弃日记</div>
-              <div className="item">🐏 の 百京 rip</div>
+              <div className="item">🐏 の 🐏</div>
+              <div className="item">🐏 の 🐏</div>
+              <div className="item">🐏 の 🐏</div>
             </div>
           </div>
         )}
