@@ -8,14 +8,16 @@ import HomeSectionV2 from "./c-cpns/home-section-v2";
 import { HomeWrapper } from "./c-cpns/style";
 
 const Home = memo(() => {
-  const { goodPriceInfo, highScoreInfo, discountInfo } = useSelector(
-    (state) => ({
-      goodPriceInfo: state.home.goodPriceInfo,
-      highScoreInfo: state.home.highScoreInfo,
-      discountInfo: state.home.discountInfo
-    }),
-    shallowEqual
-  );
+  const { goodPriceInfo, highScoreInfo, discountInfo, recommendInfo } =
+    useSelector(
+      (state) => ({
+        goodPriceInfo: state.home.goodPriceInfo,
+        highScoreInfo: state.home.highScoreInfo,
+        discountInfo: state.home.discountInfo,
+        recommendInfo: state.home.recommendInfo
+      }),
+      shallowEqual
+    );
 
   // 派发异步事件 发送网络请求
   const dispatch = useDispatch();
@@ -30,6 +32,9 @@ const Home = memo(() => {
         <div className="content">
           {isEmptyObject(discountInfo) && (
             <HomeSectionV2 infoData={discountInfo} />
+          )}
+          {isEmptyObject(recommendInfo) && (
+            <HomeSectionV2 infoData={recommendInfo} />
           )}
           <HomeSectionV1 infoData={goodPriceInfo} />
           <HomeSectionV1 infoData={highScoreInfo} />
